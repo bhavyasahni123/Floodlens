@@ -50,6 +50,7 @@ export function defaultDeps(store: ReportStore | null): AppDeps {
     reportsPolicy: config.reports,
     hashSecret: config.reportHashSecret,
     corsOrigins: config.corsOrigins,
+    trustProxy: config.trustProxy,
   };
 }
 

@@ -67,6 +67,8 @@ export const config = {
     .map((o) => o.trim())
     .filter(Boolean),
   databaseUrl: process.env.DATABASE_URL?.trim() || '',
+  /** Set when running behind exactly one reverse proxy (e.g. CloudFront) so req.ip is the real client. */
+  trustProxy: str('TRUST_PROXY', 'false').toLowerCase() === 'true',
   /** Secret used to hash submitter IPs for independence checks. Never the raw IP. */
   reportHashSecret: str('REPORT_HASH_SECRET', 'floodlens-dev-only-secret'),
   reports: {

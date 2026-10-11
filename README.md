@@ -5,9 +5,14 @@ FloodLens is a Delhi-first route-planning prototype that compares available rout
 
 > **Safety note:** FloodLens scores are informational estimates—not flood probabilities or guarantees of road safety. The historical-hotspot dataset has unverified provenance, weather and river inputs are modelled, and the risk model has not been validated against real-world outcomes.
 
-**Project status:** Runs locally. AWS deployment has not yet been configured or deployed.
+### 🌐 Live demo: **[aws-deploy.d1yyf5sl62jzgj.amplifyapp.com](https://aws-deploy.d1yyf5sl62jzgj.amplifyapp.com/)**
+
+**Project status:** Deployed on AWS (Amplify Hosting · CloudFront · EC2 · RDS for PostgreSQL). See [Deployment on AWS](#deployment-on-aws).
+
+![FloodLens route from Connaught Place to IIT Delhi, scored MODERATE because it passes the AIIMS & Safdarjung waterlogging hotspot](docs/screenshots/05-route-cp-to-iit-delhi.jpg)
 
 ## Contents
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [How it works](#how-it-works)
 - [Architecture](#architecture)
@@ -18,10 +23,41 @@ FloodLens is a Delhi-first route-planning prototype that compares available rout
 - [Environment variables](#environment-variables)
 - [API reference](#api-reference)
 - [Testing](#testing)
-- [AWS deployment status](#aws-deployment-status)
+- [Deployment on AWS](#deployment-on-aws)
 - [Limitations and roadmap](#limitations-and-roadmap)
 - [Repository structure](#repository-structure)
 - [Attribution](#attribution)
+
+## Screenshots
+
+All screenshots were taken from the live AWS deployment on 12 October 2026. Scores reflect conditions at that moment.
+
+### Landing page
+![FloodLens landing page](docs/screenshots/01-home.jpg)
+
+### Connaught Place → Delhi Technological University
+Two real alternatives from the routing service. Both are scored 15/100 (LOW) and the reason is shown: the route lies inside an active IMD moderate-rain alert area.
+
+![Route comparison from Connaught Place to DTU](docs/screenshots/02-route-cp-to-dtu.jpg)
+
+### Connaught Place → IIT Delhi
+This route scores **43/100 (MODERATE)** because it passes 82 m from the AIIMS & Safdarjung Hospital Flyover, a historically waterlogging-prone junction.
+
+![Route from Connaught Place to IIT Delhi with a moderate risk score](docs/screenshots/05-route-cp-to-iit-delhi.jpg)
+
+### Turn-by-turn directions with hotspot warning
+![Directions view warning that one step passes a historical waterlogging hotspot](docs/screenshots/06-directions.jpg)
+
+### Monsoon & Flood Risk panel: map layers, official alerts and rainfall
+Live NDMA SACHET alerts (purple markers with dashed approximate areas), 22 historical hotspots, and modelled rainfall for five Delhi sample points.
+
+![Monsoon and Flood Risk panel with layers, alerts and rainfall](docs/screenshots/03-flood-panel.jpg)
+
+### Yamuna river discharge, community reports and hotspots
+![Flood panel showing modelled Yamuna discharge and community reports](docs/screenshots/04-river-reports-legend.jpg)
+
+### Community waterlogging report form
+![Report waterlogging form](docs/screenshots/07-report-form.jpg)
 
 ## Features
 
@@ -246,6 +282,7 @@ Use `backend/.env.example` as the configuration reference. Never commit `.env` f
 | Variable | Purpose | Reviewed default/example |
 |---|---|---|
 | `PORT` | API port | `5000` |
+| `TRUST_PROXY` | Set `true` behind exactly one proxy (CloudFront) so `req.ip` is the real visitor | `false` |
 | `CORS_ORIGINS` | Allowed browser origins | `http://localhost:5173,http://localhost:4173` |
 | `DATABASE_URL` | PostgreSQL connection | Configure for your database |
 | `REPORT_HASH_SECRET` | HMAC key for submitter hashing | Long random secret |
@@ -343,22 +380,58 @@ The build summary reported these results. Re-run them against the current checko
 
 The E2E server uses labelled fixture providers and is test-only. External services can still fail in real use. The current ESLint configuration covers `.js`/`.jsx`; TypeScript is type-checked but not linted by that configuration, and no frontend unit-test suite was present in the review.
 
-## AWS deployment status
+## Deployment on AWS
 
-**AWS deployment is  implemented.** At the time of the repository review, there was no Dockerfile, infrastructure-as-code, deploy/teardown scripts, CI/CD, AWS SDK integration, or Amazon Location provider code. AWS CLI v2 was installed and configured for `ap-south-1`, but `aws sts get-caller-identity` returned `NoCredentials`. No AWS resources were deployed.
+**Live:** [https://aws-deploy.d1yyf5sl62jzgj.amplifyapp.com/](https://aws-deploy.d1yyf5sl62jzgj.amplifyapp.com/), deployed from the `aws-deploy` branch.
 
-Possible future architecture:
-- **Amazon S3 + CloudFront:** static frontend and HTTPS.
-- **Amazon EC2** or a suitable managed compute service: backend API.
-- **Amazon RDS for PostgreSQL:** persistent community reports.
-- **AWS Secrets Manager:** database credentials and report hash secret.
-- **IAM roles + Systems Manager:** access without SSH keys.
-- **Amazon CloudWatch:** logs, metrics, alarms.
-- **AWS Budgets:** cost notifications.
-- **AWS CloudFormation:** repeatable provisioning and teardown.
-- **EventBridge Scheduler:** time-limited demo cleanup, if appropriate.
+### Architecture diagram
 
-These are recommendations only. AWS services can incur charges while idle. Verify current pricing and credit eligibility, and configure billing alerts before provisioning; budget alerts are notifications, not hard spending caps.
+```mermaid
+flowchart LR
+    U["👤 User<br/>Browser / installable PWA"]
+
+    subgraph AWS["☁️ AWS"]
+        direction LR
+        AMP["AWS Amplify Hosting<br/>React + Vite static build<br/>HTTPS · CI/CD from GitHub"]
+        CF["Amazon CloudFront<br/>HTTPS endpoint for the API<br/>caching disabled"]
+        subgraph VPC["VPC"]
+            EC2["Amazon EC2<br/>Node.js · Express 5 API<br/>risk engine + source caches"]
+            RDS[("Amazon RDS<br/>PostgreSQL<br/>community reports")]
+        end
+        CW["Amazon CloudWatch<br/>logs & metrics (planned)"]
+    end
+
+    subgraph EXT["🌍 Public data sources"]
+        OSRM["OSRM<br/>routing"]
+        GEO["Photon / Nominatim<br/>place search"]
+        OM["Open-Meteo<br/>rainfall + GloFAS river"]
+        NDMA["NDMA SACHET<br/>official alerts"]
+    end
+
+    U -- "loads app (HTTPS)" --> AMP
+    U -- "/api/* JSON (HTTPS)" --> CF
+    CF -- "HTTP · origin-facing SG only" --> EC2
+    EC2 -- "SQL (private)" --> RDS
+    EC2 --> OSRM & GEO & OM & NDMA
+    EC2 -. "logs" .-> CW
+```
+
+### How a request flows
+1. **AWS Amplify Hosting** builds the frontend from `frontend/` on every push to `aws-deploy` (see [`amplify.yml`](amplify.yml)) and serves it over HTTPS. HTTPS is required for the PWA, the service worker and device location.
+2. The browser calls the API through **Amazon CloudFront** (`VITE_API_URL`). CloudFront provides HTTPS in front of the EC2 instance, so the browser never makes an insecure mixed-content request.
+3. **Amazon EC2** runs the Express API. It fetches and caches routing, rainfall, river and alert data, then scores each route. Its security group only accepts traffic from CloudFront's origin-facing IP ranges.
+4. **Amazon RDS for PostgreSQL** stores community reports. It is reachable only from the EC2 security group. The schema is applied automatically when the API starts.
+5. **Amazon CloudWatch** for application logs and metrics is the next step and is not yet configured.
+
+### AWS-specific configuration
+| Where | Setting | Why |
+|---|---|---|
+| EC2 `.env` | `TRUST_PROXY=true` | Every request reaches Express via CloudFront. This makes rate limits and report-independence checks use each visitor's real IP instead of CloudFront's. |
+| EC2 `.env` | `CORS_ORIGINS=https://aws-deploy.d1yyf5sl62jzgj.amplifyapp.com` | Only the deployed frontend may call the API from a browser. |
+| EC2 `.env` | `DATABASE_URL`, `REPORT_HASH_SECRET` | RDS connection and a long random secret. Never committed. |
+| Amplify environment | `VITE_API_URL=https://<cloudfront-domain>` | The frontend calls the API over HTTPS. |
+
+AWS services can incur charges while idle. Keep an AWS Budgets alert on the account; budget alerts are notifications, not hard spending caps.
 
 
 ## Attribution
