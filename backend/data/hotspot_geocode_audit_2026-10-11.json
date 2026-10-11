@@ -1,0 +1,127 @@
+{
+ "checkedAt": "2026-10-11T07:41:30.520Z",
+ "results": [
+  {
+   "id": "delhi-wl-001",
+   "query": "Minto Bridge Underpass, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-002",
+   "query": "Zakhira Underpass, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-003",
+   "query": "Pul Prahladpur Underpass, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-004",
+   "query": "Moolchand Underpass, Delhi",
+   "match": "Moolchand Underpass, Lajpat Nagar III, Lajpat Nagar, Central, Delhi, South East Delhi, Del",
+   "osmType": "primary",
+   "distanceMeters": 407
+  },
+  {
+   "id": "delhi-wl-005",
+   "query": "Dwarka Sector 22 Underpass, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-006",
+   "query": "ITO Junction, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-007",
+   "query": "Azad Market Underpass, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-008",
+   "query": "Kashmere Gate ISBT Ring Road, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-009",
+   "query": "AIIMS, Delhi",
+   "match": "A.I.I.M.S., Aurobindo Marg, Kidwai Nagar, New Delhi, Delhi, 110029, India",
+   "osmType": "station",
+   "distanceMeters": 294
+  },
+  {
+   "id": "delhi-wl-010",
+   "query": "Dhaula Kuan Subway, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-011",
+   "query": "Bhairon Marg, Delhi",
+   "match": "Bhairon Marg, Central, Delhi, South East Delhi, Delhi, 110503, India",
+   "osmType": "secondary",
+   "distanceMeters": 800
+  },
+  {
+   "id": "delhi-wl-012",
+   "query": "Khanpur T-Point, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-013",
+   "query": "Sarita Vihar Underpass, Delhi",
+   "match": "Esri R&D Centre New Delhi, Sarita Vihar Okhla Underpass, Jasola, Central, New Delhi, South",
+   "osmType": "company",
+   "distanceMeters": 1569
+  },
+  {
+   "id": "delhi-wl-014",
+   "query": "Jahangirpuri Metro, Delhi",
+   "match": "Delhi Metro Yellow Line, Mall Road Extension, Jahangir Puri, Civil Lines, Delhi, North Del",
+   "osmType": "subway",
+   "distanceMeters": 656
+  },
+  {
+   "id": "delhi-wl-015",
+   "query": "Tilak Bridge Underpass, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-016",
+   "query": "Modi Mill Flyover Underpass, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-017",
+   "query": "Punjabi Bagh Club Road Underpass, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-018",
+   "query": "Najafgarh Phirni Road, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-019",
+   "query": "Burari Sant Nagar 100 Feet Road, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-020",
+   "query": "Defence Colony, Delhi",
+   "match": "Defence Colony, Central, Delhi, South East Delhi, Delhi, India",
+   "osmType": "administrative",
+   "distanceMeters": 415
+  },
+  {
+   "id": "delhi-wl-021",
+   "query": "Nigam Bodh Ghat, Delhi",
+   "match": null
+  },
+  {
+   "id": "delhi-wl-022",
+   "query": "Pragati Maidan Tunnel Incline, Delhi",
+   "match": null
+  }
+ ]
+}

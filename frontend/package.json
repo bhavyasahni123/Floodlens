@@ -1,0 +1,24 @@
+{
+  "name": "floodlens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monsoon-aware, flood-risk routing for web and mobile",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "web": "npm run dev --workspace=@floodlens/web",
+    "mobile": "npm run start --workspace=@floodlens/mobile",
+    "api": "npm run dev --workspace=@floodlens/api",
+    "e2e": "node e2e/run.mjs",
+    "typecheck": "tsc --noEmit -p apps/web/src/tsconfig.json",
+    "build": "npm run build --workspace=@floodlens/web"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.22",
+    "playwright-core": "^1.64.0",
+    "typescript": "^7.0.2"
+  }
+}

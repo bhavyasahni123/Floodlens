@@ -1,0 +1,806 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "datasetName": "Delhi Urban Waterlogging Susceptibility Hotspots",
+    "authority": "Public Works Department (PWD) & Delhi Traffic Police Monsoon Action Plan",
+    "coverage": "National Capital Territory of Delhi, India",
+    "spatialReference": "EPSG:4326 (WGS84)",
+    "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+    "version": "2024-2026",
+    "lastUpdated": "2026-06",
+    "license": "Open Government Data / Public Advisory",
+    "disclaimer": "Identifies historically waterlogging-prone infrastructural nodes (underpasses, low-lying intersections, river corridor proximity). Represents structural vulnerability, not real-time sensor depth or dynamic rainfall accumulation.",
+    "provenance": {
+      "status": "UNVERIFIED_COMPILATION",
+      "summary": "Location names are places widely reported as waterlogging-prone in Delhi. Coordinates, severity labels and buffer radii were compiled for this prototype; no source document for them is held in the repository, so the authority and license fields above are unverified claims, not confirmed attributions.",
+      "coordinatePrecision": "APPROXIMATE",
+      "bufferMeaning": "Buffer radii are analysis margins for route proximity, not mapped flood extents.",
+      "versionLabelNote": "version/lastUpdated are labels carried over from the original compilation, not verification dates.",
+      "geocodeAudit": {
+        "file": "hotspot_geocode_audit_2026-10-11.json",
+        "checkedAt": "2026-10-11T07:41:30.520Z",
+        "method": "Nominatim name search bounded to Delhi",
+        "matched": 6,
+        "total": 22
+      }
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "delhi-wl-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2215,
+          28.6416
+        ]
+      },
+      "properties": {
+        "name": "Minto Bridge Underpass",
+        "infrastructureType": "Railway Underpass",
+        "zone": "Central Delhi",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 200,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Critically low railway underpass; historical site of intense stormwater pooling during monsoon cloudbursts.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Minto Bridge Underpass, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1582,
+          28.6654
+        ]
+      },
+      "properties": {
+        "name": "Zakhira Underpass",
+        "infrastructureType": "Road Underpass",
+        "zone": "North-West Delhi",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 250,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Major arterial connection under railway tracks prone to severe water ingress from surrounding catchments.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Zakhira Underpass, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2917,
+          28.5028
+        ]
+      },
+      "properties": {
+        "name": "Pul Prahladpur Underpass",
+        "infrastructureType": "Road Underpass",
+        "zone": "South Delhi",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 200,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "MB Road underpass depression frequently submerged during moderate-to-heavy rains.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Pul Prahladpur Underpass, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2341,
+          28.5684
+        ]
+      },
+      "properties": {
+        "name": "Moolchand Underpass",
+        "infrastructureType": "Ring Road Underpass",
+        "zone": "South Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 180,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Traffic Police Monsoon Advisory",
+        "lastUpdated": "2026-06",
+        "description": "High-volume Ring Road underpass subject to surface runoff bottlenecks during persistent downpours.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Traffic Police Monsoon Advisory",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": true,
+            "matchedName": "Moolchand Underpass, Lajpat Nagar III, Lajpat Nagar, Central, Delhi, South East Delhi, Del",
+            "offsetMeters": 407,
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0543,
+          28.5602
+        ]
+      },
+      "properties": {
+        "name": "Dwarka Sector 22 Underpass",
+        "infrastructureType": "Sub-arterial Underpass",
+        "zone": "South-West Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 160,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Connecting underpass between sub-city sectors subject to localized stormwater accumulation.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Dwarka Sector 22 Underpass, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2435,
+          28.6304
+        ]
+      },
+      "properties": {
+        "name": "ITO Junction & Delhi Secretariat",
+        "infrastructureType": "Arterial Intersection & Drain Outfall",
+        "zone": "Central / East Corridor",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 250,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD & Traffic Police Monitored Points",
+        "lastUpdated": "2026-06",
+        "description": "Crucial transit interchange near Drain No. 12 outfall, susceptible to backflow during Yamuna high stages.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD & Traffic Police Monitored Points",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "ITO Junction, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2081,
+          28.6586
+        ]
+      },
+      "properties": {
+        "name": "Azad Market Underpass",
+        "infrastructureType": "Road Underpass",
+        "zone": "North Delhi",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 180,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Dense market artery depression vulnerable to rapid flash waterlogging.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Azad Market Underpass, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2308,
+          28.6669
+        ]
+      },
+      "properties": {
+        "name": "Kashmere Gate ISBT Ring Road",
+        "infrastructureType": "Ring Road Arterial Low-Lying Point",
+        "zone": "North Delhi",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 220,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Traffic Police Monitored Points",
+        "lastUpdated": "2026-06",
+        "description": "Major transit hub stretch adjacent to the river corridor prone to deep waterlogging.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Traffic Police Monitored Points",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Kashmere Gate ISBT Ring Road, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2078,
+          28.5695
+        ]
+      },
+      "properties": {
+        "name": "AIIMS & Safdarjung Hospital Flyover",
+        "infrastructureType": "Arterial Junction & Low Depression",
+        "zone": "South Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 180,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Traffic Police Monitored Points",
+        "lastUpdated": "2026-06",
+        "description": "Heavy ambulance corridor vulnerable to service road waterlogging during monsoon showers.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Traffic Police Monitored Points",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": true,
+            "matchedName": "A.I.I.M.S., Aurobindo Marg, Kidwai Nagar, New Delhi, Delhi, 110029, India",
+            "offsetMeters": 294,
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1615,
+          28.5919
+        ]
+      },
+      "properties": {
+        "name": "Dhaula Kuan Subway / Interchange",
+        "infrastructureType": "Interchange Subway & Ramp",
+        "zone": "South-West Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 180,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Traffic Police Monitored Points",
+        "lastUpdated": "2026-06",
+        "description": "Multi-tier junction ramps prone to slow drainage during sudden cloudbursts.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Traffic Police Monitored Points",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Dhaula Kuan Subway, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2458,
+          28.6186
+        ]
+      },
+      "properties": {
+        "name": "Bhairon Marg & Mathura Road",
+        "infrastructureType": "Arterial Highway Section",
+        "zone": "Central Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 200,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Near Purana Qila low-lying stretch prone to stormwater pooling during high intensity downpours.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": true,
+            "matchedName": "Bhairon Marg, Central, Delhi, South East Delhi, Delhi, 110503, India",
+            "offsetMeters": 800,
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2359,
+          28.5135
+        ]
+      },
+      "properties": {
+        "name": "Khanpur T-Point / MB Road",
+        "infrastructureType": "Arterial Intersection",
+        "zone": "South Delhi",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 220,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Traffic Police Monitored Points",
+        "lastUpdated": "2026-06",
+        "description": "Arterial road bottleneck with severe historical waterlogging and traffic disruption.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Traffic Police Monitored Points",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Khanpur T-Point, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.3015,
+          28.5298
+        ]
+      },
+      "properties": {
+        "name": "Sarita Vihar Underpass",
+        "infrastructureType": "Road Underpass",
+        "zone": "South-East Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 170,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Connecting underpass between Mathura Road and internal colonies vulnerable to drainage backup.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": true,
+            "matchedName": "Esri R&D Centre New Delhi, Sarita Vihar Okhla Underpass, Jasola, Central, New Delhi, South",
+            "offsetMeters": 1569,
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1706,
+          28.7258
+        ]
+      },
+      "properties": {
+        "name": "Jahangirpuri Metro & GT Karnal Road",
+        "infrastructureType": "Highway Corridor & Metro Underdeck",
+        "zone": "North Delhi",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 220,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Traffic Police Monitored Points",
+        "lastUpdated": "2026-06",
+        "description": "Major interstate artery low stretch prone to waterlogging causing extensive delays.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Traffic Police Monitored Points",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": true,
+            "matchedName": "Delhi Metro Yellow Line, Mall Road Extension, Jahangir Puri, Civil Lines, Delhi, North Del",
+            "offsetMeters": 656,
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2396,
+          28.6288
+        ]
+      },
+      "properties": {
+        "name": "Tilak Bridge Underpass",
+        "infrastructureType": "Railway Bridge Underpass",
+        "zone": "Central Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 160,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Bahadur Shah Zafar Marg railway underbridge vulnerable to surface inundation.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Tilak Bridge Underpass, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2694,
+          28.5583
+        ]
+      },
+      "properties": {
+        "name": "Modi Mill Flyover Underpass",
+        "infrastructureType": "Flyover Underpass / Okhla Link",
+        "zone": "South Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 170,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Traffic Police Monitored Points",
+        "lastUpdated": "2026-06",
+        "description": "Key industrial transit junction subject to stormwater pooling at flyover descent.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Traffic Police Monitored Points",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Modi Mill Flyover Underpass, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1293,
+          28.6687
+        ]
+      },
+      "properties": {
+        "name": "Punjabi Bagh Club Road Underpass",
+        "infrastructureType": "Road Underpass",
+        "zone": "West Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 170,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Underpass connecting West Delhi residential blocks prone to slow stormwater evacuation.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Punjabi Bagh Club Road Underpass, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9842,
+          28.6128
+        ]
+      },
+      "properties": {
+        "name": "Najafgarh Phirni Road",
+        "infrastructureType": "Outer Arterial Road",
+        "zone": "South-West Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 180,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Traffic Police Monitored Points",
+        "lastUpdated": "2026-06",
+        "description": "Rural-urban perimeter ring road affected by overflow from local stormwater drains.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Traffic Police Monitored Points",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Najafgarh Phirni Road, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1994,
+          28.7455
+        ]
+      },
+      "properties": {
+        "name": "Burari Sant Nagar 100 Feet Road",
+        "infrastructureType": "Low-Lying Arterial Corridor",
+        "zone": "North Delhi",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 240,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Low-gradient catchment area experiencing recurrent severe monsoon waterlogging.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Burari Sant Nagar 100 Feet Road, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2372,
+          28.5721
+        ]
+      },
+      "properties": {
+        "name": "Defence Colony / Lajpat Nagar Underpass",
+        "infrastructureType": "Railway Underpass",
+        "zone": "South Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 160,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Sub-arterial railway underpass subject to water retention during heavy spells.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": true,
+            "matchedName": "Defence Colony, Central, Delhi, South East Delhi, Delhi, India",
+            "offsetMeters": 415,
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2385,
+          28.6698
+        ]
+      },
+      "properties": {
+        "name": "Nigam Bodh Ghat / Yamuna Floodplain",
+        "infrastructureType": "River Floodplain Lowland",
+        "zone": "North-Central River Corridor",
+        "severity": "HIGH",
+        "bufferRadiusMeters": 280,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi Disaster Management Authority & CWC Monitored Stretch",
+        "lastUpdated": "2026-06",
+        "description": "Directly adjacent to the Yamuna embankment; vulnerable to fluvial overbank inundation when river stages exceed danger mark.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi Disaster Management Authority & CWC Monitored Stretch",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Nigam Bodh Ghat, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "delhi-wl-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2431,
+          28.6212
+        ]
+      },
+      "properties": {
+        "name": "Pragati Maidan Tunnel Incline",
+        "infrastructureType": "Subsurface Tunnel Entrance",
+        "zone": "Central Delhi",
+        "severity": "MODERATE",
+        "bufferRadiusMeters": 180,
+        "hazardType": "HISTORICAL_SUSCEPTIBILITY",
+        "dataSource": "Delhi PWD Monsoon Action Plan",
+        "lastUpdated": "2026-06",
+        "description": "Subterranean tunnel ingress points subject to precautionary closure during severe rainfall.",
+        "provenance": {
+          "status": "UNVERIFIED",
+          "coordinatePrecision": "APPROXIMATE",
+          "claimedAttribution": "Delhi PWD Monsoon Action Plan",
+          "attributionVerified": false,
+          "severityBasis": "Assigned during prototype compilation; not traced to an official classification.",
+          "lastVerified": null,
+          "geocodeCrossCheck": {
+            "matched": false,
+            "query": "Pragati Maidan Tunnel Incline, Delhi",
+            "checkedAt": "2026-10-11T07:41:30.520Z"
+          }
+        }
+      }
+    }
+  ]
+}
