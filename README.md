@@ -1,4 +1,4 @@
-# FloodLens 🌧️
+# FloodLens 
 ### Monsoon-aware route planning for Delhi
 
 FloodLens is a Delhi-first route-planning prototype that compares available routes by estimated travel time, distance, and an explainable **heuristic waterlogging-risk score**. It brings together routing, modelled rainfall, modelled river discharge, public alerts, a historical-hotspot layer, and unverified community reports.
