@@ -268,7 +268,7 @@ export default function Planner({ onHome }: { onHome: () => void }) {
             }
           }}
         >
-          <span aria-hidden="true">☔</span> Monsoon &amp; Flood Risk
+          Monsoon &amp; Flood Risk
         </button>
       </header>
 

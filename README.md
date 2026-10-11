@@ -45,8 +45,8 @@ This route scores **43/100 (MODERATE)** because it passes 82 m from the AIIMS & 
 
 ![Route from Connaught Place to IIT Delhi with a moderate risk score](docs/screenshots/05-route-cp-to-iit-delhi.jpg)
 
-### Turn-by-turn directions with hotspot warning
-![Directions view warning that one step passes a historical waterlogging hotspot](docs/screenshots/06-directions.jpg)
+### Official alerts
+![Directions view warning that one step passes a historical waterlogging hotspot](docs/screenshots/IMG-20261012-WA0027.jpg)
 
 ### Monsoon & Flood Risk panel: map layers, official alerts and rainfall
 Live NDMA SACHET alerts (purple markers with dashed approximate areas), 22 historical hotspots, and modelled rainfall for five Delhi sample points.
