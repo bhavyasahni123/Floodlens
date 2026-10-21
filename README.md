@@ -5,7 +5,7 @@ FloodLens is a Delhi-first route-planning prototype that compares available rout
 
 > **Safety note:** FloodLens scores are informational estimates—not flood probabilities or guarantees of road safety. The historical-hotspot dataset has unverified provenance, weather and river inputs are modelled, and the risk model has not been validated against real-world outcomes.
 
-### 🌐 Live demo: **[aws-deploy.d1yyf5sl62jzgj.amplifyapp.com](https://aws-deploy.d1yyf5sl62jzgj.amplifyapp.com/)**
+###  Live demo: **[aws-deploy.d1yyf5sl62jzgj.amplifyapp.com](https://aws-deploy.d1yyf5sl62jzgj.amplifyapp.com/)**
 
 **Project status:** Deployed on AWS (Amplify Hosting · CloudFront · EC2 · RDS for PostgreSQL). See [Deployment on AWS](#deployment-on-aws).
 
